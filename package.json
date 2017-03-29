@@ -6,7 +6,7 @@
   "scripts": {
     "test": "mocha --compilers js:babel-register --bail --reporter nyan spec/serverSpec.js; pkill -n node;",
     "start": "node server/server.js",
-    "start-dev": "nodemon server/server.js",
+    "start-dev": "nodemon --exec babel-node server/server.js",
     "dev": "webpack -d --watch",
     "build": "webpack",
     "heroku-postbuild": "webpack --config ./webpack.config.js --progress"
@@ -45,6 +45,7 @@
     "webpack": "^2.2.1"
   },
   "devDependencies": {
+    "babel-plugin-trace": "^1.0.0",
     "enzyme": "^2.7.1",
     "react-addons-test-utils": "^15.4.2",
     "react-dom": "^15.4.2"
