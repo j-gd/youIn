@@ -8,7 +8,7 @@ import {users as friends} from '../../../server/data.js';
 import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
 import Facebook from './Facebook.jsx';
 import $ from 'jquery';
-
+import Event from './Event.jsx';
 
 
 
@@ -92,6 +92,10 @@ class App extends React.Component {
             accessToken={this.state.facebookToken} userName={this.state.userName}
             history={props.history}
             getEvents={this.getEvents.bind(this)}/>)
+        }} />
+        <Route path='/slack' component={(props) => {
+          return (<Event 
+            accessToken={this.state.facebookToken}/>)
         }} />
       </div>
       </Router>
