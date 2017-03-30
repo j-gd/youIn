@@ -45,3 +45,6 @@ jspm_packages
 
 # Mac files
 .DS_Store
+
+# API dummy data
+server/dummy_data.json
