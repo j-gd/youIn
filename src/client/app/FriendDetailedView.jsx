@@ -7,7 +7,7 @@ class FriendDetailedView extends React.Component {
     this.state = {
       accepted: false,
       rejected: false
-    }
+    };
     //bind methods here
 
   }

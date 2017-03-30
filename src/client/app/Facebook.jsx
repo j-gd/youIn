@@ -4,7 +4,7 @@ import { ajaxSetup } from 'jquery';
 
 class Facebook extends React.Component {
   constructor(props) {
-    super(props)
+    super(props);
   }
   componentDidMount() {
     window.fbAsyncInit = function() {
