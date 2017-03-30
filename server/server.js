@@ -59,6 +59,8 @@ app.get('/test', passport.authenticate('facebook-token'), function(req, res) {
   }
 });
 
+app.post('/sms/remind', handler.sendSms);
+
 app.get('*', handler.wildCard);
 
 
