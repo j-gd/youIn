@@ -6,10 +6,11 @@ class OwnerDetailedView extends React.Component {
     super(props);
     this.state = {
       confirm: false
-    }
+    };
     //bind methods here
     this.deleteEvent = this.deleteEvent.bind(this);
     this.updateEventStatus = this.updateEventStatus.bind(this);
+    this.handleRemindClick = this.handleRemindClick.bind(this);
   }
   //insert methods here
 
@@ -42,6 +43,29 @@ class OwnerDetailedView extends React.Component {
 
   }
 
+  sendSmsReminder(url) {
+    // AJAX request to send event reminder SMS from users list in the database
+    $.ajax({
+      url: url,
+      method: 'POST',
+      'Content-type': 'application/json',
+      data: {
+        event: JSON.stringify(this.props.event)
+      },
+      success: function() {
+        console.log('Successful Ajax sendSmsReminder!');
+      },
+      error: function(err) {
+        console.log('Error in sendSmsReminder in OwnerDetailedView.jsx', err);
+      }
+    });
+  }
+
+  handleRemindClick () {
+    console.log('reminder clicked!');
+    this.sendSmsReminder('/sms/remind');
+  }
+
   render() {
     const attendees = this.props.event.attendees;
 
@@ -56,6 +80,7 @@ class OwnerDetailedView extends React.Component {
             {attendees.map((attendee, i) => <li key={i}>{attendee.firstname}</li>)}
           </ul>
         </div>
+        <button onClick={this.handleRemindClick} id="owner-remind-button" className="col-md-offset-1">Send Reminder Now</button>
         <button onClick={this.deleteEvent} id="owner-delete-button" className="col-md-offset-1">Delete this Event</button>
       </div>
     );
