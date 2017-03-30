@@ -80,8 +80,8 @@ class OwnerDetailedView extends React.Component {
             {attendees.map((attendee, i) => <li key={i}>{attendee.firstname}</li>)}
           </ul>
         </div>
-        <button onClick={this.handleRemindClick} id="owner-remind-button" className="col-md-offset-1">Send Reminder Now</button>
-        <button onClick={this.deleteEvent} id="owner-delete-button" className="col-md-offset-1">Delete this Event</button>
+        <button onClick={this.handleRemindClick} className="you-in-button owner-remind col-md-offset-1">Send Reminder Now</button>
+        <button onClick={this.deleteEvent} className="you-in-button owner-delete col-md-offset-1">Delete this Event</button>
       </div>
     );
   }

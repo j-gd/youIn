@@ -13,7 +13,7 @@ module.exports.sendSms = function(event, cb) {
   let eventDateString = event.date.slice(0, 10);
   let fullEventTime = new Date (eventDateString + ' ' + event.time);
 
-  hoursLeft = Math.floor((Date.parse(fullEventTime) - Date.now()) / (60 * 60 * 1000));
+  let hoursLeft = Math.floor((Date.parse(fullEventTime) - Date.now()) / (60 * 60 * 1000));
 
   attendees.forEach(function(attendee) {
     client.messages.create({ 

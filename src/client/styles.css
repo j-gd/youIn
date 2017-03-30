@@ -87,7 +87,9 @@ p, li {
 }
 
 .eventlist {
-  background-color: rgba(2,2,2,.5);
+  color: #800000;
+
+  background-color: rgba(90,0,0,.9);
   border-radius: 5px;
   color: white;
   text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
@@ -177,14 +179,6 @@ button */
 
 }
 
-#create_event {
-  font-family: sans-serif;
-  font-size: 32px;
-  color: white;
-  background-color: #800000;
-  padding: 12px 12px 12px 12px;
-  border-radius: 12px;
-}
 
 #my-events-title {
   font-weight: bold;
@@ -210,14 +204,29 @@ button */
   text-shadow: 1px 0 0 black, 0 -1px 0 black, 0 1px 0 black, -1px 0 0 black;
 }
 
-.goingButton {
+
+/* ======== BUTTONS =======*/
+.you-in-button {
   border-radius: 12px;
-  background-color: #9fa3b7;
+  font-family: sans-serif;
 }
 
-#owner-delete-button {
-  border-radius: 12px;
-  background-color: #f47927;
-  color: black;
+.going {
+  background-color: green;
 }
 
+.owner-remind {
+  background-color: blue;
+
+}
+
+.owner-delete {
+  background-color: red;
+}
+
+.owner-create {
+  font-size: 32px;
+  color: white;
+  background-color: green;
+  padding: 12px 12px 12px 12px;
+}
