@@ -80,7 +80,7 @@ class Facebook extends React.Component {
        <div className='container'>
          <div className='page-header'>
          </div>
-         <div className='col-md-12 login'>
+         <div className='col-md-12'>
            <h1> Start the Party </h1>
            <h4> With The Click Of A Button </h4>
            <div className='row center'>

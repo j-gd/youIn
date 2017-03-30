@@ -3,6 +3,7 @@ import OwnerEventList from './OwnerEventList.jsx';
 import FriendEventList from './FriendEventList.jsx';
 import CreateEventButton from './CreateEventButton.jsx';
 import LogoutButton from './LogoutButton.jsx';
+import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
 
 class Homepage extends React.Component {
   constructor(props) {
@@ -72,6 +73,7 @@ class Homepage extends React.Component {
             getEvents={this.props.getEvents}/>
           </div>
         </div>
+        <Link to='/slack' > Link to new design </Link>
       </div>
     )
   }
