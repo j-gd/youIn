@@ -242,3 +242,17 @@ h3.sendText {
   background-color: rgb(230,230,230);  /* for debug */
 
 }
+
+.container-fluid.main{
+  margin: 0 auto;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  background-color: blue;
+}
+
+.col-md-3.directory{
+  background-color: red;
+  height: 100%;
+
+}
