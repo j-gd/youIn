@@ -8,18 +8,23 @@ class Event extends React.Component {
 
     // <div className="event-title"> Cookout ****** </div>
     // <div className="row">
-    //     <div className="col-md-8"> Details</div>
-    //     <div className="col-md-4 event-chat"> Chat </div>
+    //     <div className="col-sm-8"> Details</div>
+    //     <div className="col-sm-4 event-chat"> Chat </div>
     // </div>
   render () {
     return (
 
 <div className="container-fluid main">
 
-  <div className="col-md-3 directory"> col-md-3
+  <div className="col-sm-3 directory"> col-sm-3
+
   </div>
 
-  <div className="col-md-9">
+  <div className="col-sm-9 right9">
+    <div className='col-sm-12 topbar'>
+      TOPBAR
+    </div>
+
   </div>
 
 </div>
@@ -31,5 +36,5 @@ export default Event;
 
 
     // </div>
-      // <div className="row-md-6"> # cookout </div>
-      // <div className="row-md-6"> row-md-6
+      // <div className="row-sm-6"> # cookout </div>
+      // <div className="row-sm-6"> row-sm-6

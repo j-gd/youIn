@@ -251,8 +251,19 @@ h3.sendText {
   background-color: blue;
 }
 
-.col-md-3.directory{
+.col-sm-3.directory{
   background-color: red;
   height: 100%;
 
+}
+
+.col-sm-12.topbar {
+  background-color: purple;
+  padding: 1em;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.col-sm-9.right9 {
+  padding: 0;
 }
