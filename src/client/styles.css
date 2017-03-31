@@ -42,7 +42,7 @@
 }
 
 body {
-  background: url(./media_lib/campfire-984020_1920.jpg) no-repeat center center fixed;
+  /*background: url(./media_lib/campfire-984020_1920.jpg) no-repeat center center fixed;*/
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -222,3 +222,18 @@ button */
   color: black;
 }
 
+/*================ CSS REDESIGN =================*/
+
+.directory {
+  background-color: rgb(77,57,75);
+  color: white;
+}
+
+.event-title {
+  background-color: rgb(231,227,217);  /* for debug */
+}
+
+.event-chat {
+  background-color: rgb(230,230,230);  /* for debug */
+
+}
