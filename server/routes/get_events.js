@@ -3,7 +3,6 @@ require('../../env.js');
 
 let db = require('../config.js');
 let model = require('../models/index.js');
-let trace = require('babel-plugin-trace');
 
 //query database to get all events
 
