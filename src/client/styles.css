@@ -221,3 +221,7 @@ button */
   color: black;
 }
 
+h3.sendText {
+    display: inline;
+}
+

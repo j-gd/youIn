@@ -5,7 +5,8 @@ class OwnerDetailedView extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      confirm: false
+      confirm: false,
+      remindButtonClicked: false
     };
     //bind methods here
     this.deleteEvent = this.deleteEvent.bind(this);
@@ -63,7 +64,14 @@ class OwnerDetailedView extends React.Component {
 
   handleRemindClick () {
     console.log('reminder clicked!');
-    this.sendSmsReminder('/sms/remind');
+
+    this.setState({
+      remindButtonClicked: !this.state.remindButtonClicked
+    });
+    
+    if (this.state.remindButtonClicked) {
+      this.sendSmsReminder('/sms/remind');
+    }
   }
 
   render() {
@@ -80,8 +88,11 @@ class OwnerDetailedView extends React.Component {
             {attendees.map((attendee, i) => <li key={i}>{attendee.firstname}</li>)}
           </ul>
         </div>
-        <button onClick={this.handleRemindClick} id="owner-remind-button" className="col-md-offset-1">Send Reminder Now</button>
         <button onClick={this.deleteEvent} id="owner-delete-button" className="col-md-offset-1">Delete this Event</button>
+        {!this.state.remindButtonClicked
+          ? <button onClick={this.handleRemindClick} id="owner-delete-button" className="col-md-offset-1">Send Reminder Now</button>
+          : <h3 className="sendText" id="" onClick={this.handleRemindClick}>Reminder Text Sent!</h3>
+        }
       </div>
     );
   }
