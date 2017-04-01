@@ -1,6 +1,7 @@
 import React from 'react';
 import Chat from './Chat.jsx';
-
+import MyEvents from './MyEvents.jsx';
+import Homepage from './Homepage.jsx';
 // import {render} from 'react-dom';
 
 class Event extends React.Component {
@@ -30,6 +31,8 @@ class Event extends React.Component {
     </div>
     <div className='col-sm-12 accountMyEvents'>
       <h2>My Events</h2>
+      <MyEvents events={this.props.ownerEvents}/>
+
     </div>
     <div className='col-sm-12 accountFriendEvents'>
       <h2>Friend's Events</h2>
@@ -42,6 +45,7 @@ class Event extends React.Component {
     </div>
     <div className='col-sm-8 mainview'>
     mainview
+
     </div>
     <div className='col-sm-4 right4'>
     insert chat Component

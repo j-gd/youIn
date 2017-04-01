@@ -66,13 +66,13 @@ h2, h4 {
   /*font-family: Roboto, sans-serif;*/
   font-family: 'Josefin Sans', sans-serif;
 font-weight: 100;
-  text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
+  /*text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;*/
 }
 
 p, li {
   color: white;
   font-family: Roboto, sans-serif;
-  text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
+  /*text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;*/
 }
 
 .create {
@@ -296,10 +296,23 @@ h3.sendText {
   height: 4em;
   border-radius: 10%;
   float: left;
-  padding-right: 0.5em;
+  /*padding-right: 0.5em;*/
 }
 .row-sm-9.accountName h2 {
   display: inline;
   font-size: 2em;
+  /*padding: 0.8em;*/
+}
 
+.eventListItem li{
+  font-size: 1.6em;
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 300;
+  list-decoration: none;
+}
+
+.eventListItem li:hover {
+  color: cornflowerblue;
+  /*font-size: 1.65em;*/
+  transition: 0.2s ease;
 }
