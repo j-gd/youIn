@@ -1,19 +1,28 @@
 import React from 'react';
 
-class EventOverview extends React.Component {
+class EventOverview extends React.PureComponent {
   constructor(props){
     super(props);
     this.state = {}
+    this.updateEventDetails = this.updateEventDetails.bind(this);
   }
+  componentDidMount(){
+    console.log('inside DID MOUNT EVENT OVERVIEW')
+  }
+  updateEventDetails(event){
+    console.log('inside update event details');
+  }
+
   render(){
+    const event = this.props.event.length ? this.props.event[0] : undefined;
     return(
       <div className='EventOverviewWrapper'>
         <div className='eventDetails'>
-          <h4>March 30th, 2017</h4>
-          <h4>Hack Reactor</h4>
-          <h4>994 Market St, SF, CA 94102</h4>
-          <h4>SuggestedDonation: $5</h4>
-          <p>Update</p>
+          <h4>Date: {event.title}</h4>
+          <h4>Location: {event.description}</h4>
+          <h4>Location: {event.short_desc}</h4>
+
+          <p onClick={this.updateEventDetails}>Update</p>
         </div>
 
         <div className='whosIn'>
