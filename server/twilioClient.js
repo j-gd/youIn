@@ -1,4 +1,4 @@
-var dotenv = require('dotenv');
+let dotenv = require('dotenv');
 dotenv.config({path: '.env'});
 
 let twilioAccountSid = process.env.TWILIO_ACCOUNT_SID;
@@ -13,6 +13,7 @@ module.exports.sendSms = function(event, attendees) {
 
   let hoursLeft = Math.floor((Date.parse(fullEventTime) - Date.now()) / (60 * 60 * 1000));
 
+  console.log('the twilioAccountSid', twilioAccountSid);
   return new Promise(function(resolve, reject) {
     let allData = [];
 
