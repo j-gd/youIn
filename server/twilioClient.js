@@ -11,7 +11,7 @@ module.exports.sendSms = function(event, attendees) {
   let eventDateString = event.date.slice(0, 10);
   let fullEventTime = new Date (eventDateString + ' ' + event.time);
 
-  hoursLeft = Math.floor((Date.parse(fullEventTime) - Date.now()) / (60 * 60 * 1000));
+  let hoursLeft = Math.floor((Date.parse(fullEventTime) - Date.now()) / (60 * 60 * 1000));
 
   return new Promise(function(resolve, reject) {
     let allData = [];
