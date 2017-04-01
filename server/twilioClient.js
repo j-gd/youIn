@@ -17,7 +17,7 @@ module.exports.sendSms = function(event, attendees) {
     let allData = [];
 
     attendees.forEach(function(attendee) {
-      trace: attendee;
+      // trace: attendee;
       client.messages.create({ 
         to: attendee.phonenumber, 
         from: twilioNumber, 
