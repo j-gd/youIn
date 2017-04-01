@@ -65,13 +65,13 @@ class OwnerDetailedView extends React.Component {
   handleRemindClick () {
     console.log('reminder clicked!');
 
+    if (!this.state.remindButtonClicked) {
+      this.sendSmsReminder('/sms/remind');
+    }
+    
     this.setState({
       remindButtonClicked: !this.state.remindButtonClicked
     });
-    
-    if (this.state.remindButtonClicked) {
-      this.sendSmsReminder('/sms/remind');
-    }
   }
 
   render() {

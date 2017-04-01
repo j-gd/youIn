@@ -1,4 +1,4 @@
-var dotenv = require('dotenv');
+let dotenv = require('dotenv');
 dotenv.config({path: '.env'});
 
 let twilioAccountSid = process.env.TWILIO_ACCOUNT_SID;
@@ -13,29 +13,30 @@ module.exports.sendSms = function(event, attendees) {
 
   let hoursLeft = Math.floor((Date.parse(fullEventTime) - Date.now()) / (60 * 60 * 1000));
 
-  return new Promise(function(resolve, reject) {
-    let allData = [];
+  console.log('the twilioAccountSid', twilioAccountSid);
+  // return new Promise(function(resolve, reject) {
+  //   let allData = [];
 
-    attendees.forEach(function(attendee) {
-      // trace: attendee;
-      client.messages.create({ 
-        to: attendee.phonenumber, 
-        from: twilioNumber, 
-        body: `Hey ${attendee.firstname}, ${event.title} is happening in ${hoursLeft} hours! Are youIn?`
+  //   attendees.forEach(function(attendee) {
+  //     // trace: attendee;
+  //     client.messages.create({ 
+  //       to: attendee.phonenumber, 
+  //       from: twilioNumber, 
+  //       body: `Hey ${attendee.firstname}, ${event.title} is happening in ${hoursLeft} hours! Are youIn?`
 
-      }, function(err, data) {
-        if (err) {
-          console.error(err);
-          reject(err);
-        } else {
-          console.log('SMS sent!');
-          allData.push(data);
+  //     }, function(err, data) {
+  //       if (err) {
+  //         console.error(err);
+  //         reject(err);
+  //       } else {
+  //         console.log('SMS sent!');
+  //         allData.push(data);
 
-          if (allData.length === attendees.length) {
-            resolve(allData);
-          }
-        }
-      });
-    });
-  }); 
+  //         if (allData.length === attendees.length) {
+  //           resolve(allData);
+  //         }
+  //       }
+  //     });
+  //   });
+  // }); 
 };
