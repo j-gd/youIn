@@ -10,7 +10,7 @@ module.exports = (req, res) => {
   // let test = model.getUsersToSms.attendingUsersWithPhone(2);
   // console.log(test);
   //~~hard-coded to event_id value of 2, change in prod~~~~~
-  return model.getUsersToSms.attendingUsersWithPhone(2)
+  return model.getUsersToSms.attendingUsersWithPhone(event.event_id)
   .then( (attendees) => {
  
     twilioClient.sendSms(event, attendees)
