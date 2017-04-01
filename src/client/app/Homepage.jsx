@@ -9,7 +9,8 @@ class Homepage extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      intervalId: null
+      intervalId: null,
+      clickedEvent: false
     };
   }
 
