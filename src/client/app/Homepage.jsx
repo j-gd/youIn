@@ -147,5 +147,4 @@ class Homepage extends React.Component {
   }
 }
 
-
 export default Homepage;
