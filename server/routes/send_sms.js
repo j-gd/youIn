@@ -1,6 +1,6 @@
 let twilioClient = require('../twilioClient.js');
 let model = require('../models/index.js');
-let attendees = require('../dummy_data.json');
+// let attendees = require('../dummy_data.json');
 
 module.exports = (req, res) => {
   let sringEvent = req.body['event'];
