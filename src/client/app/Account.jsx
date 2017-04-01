@@ -1,4 +1,6 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
+
 import MyEvents from './MyEvents.jsx';
 
 
@@ -6,7 +8,7 @@ class Account extends React.Component {
   constructor(props){
     super(props);
     this.state = {
-      photo: false
+      photo: false,
     }
   }
   render(){
@@ -21,7 +23,7 @@ class Account extends React.Component {
         </div>
       </div>
       <div className='col-sm-12 accountMyEvents'>
-        <h2>My Events</h2>
+        <h2>My Events<button className='glyphicon glyphicon-plus-sign' onClick={this.props.handleClickedEvent}></button></h2>
         <MyEvents events={this.props.myEvents}/>
 
       </div>

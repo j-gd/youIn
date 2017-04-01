@@ -22,6 +22,11 @@ class Homepage extends React.Component {
     };
   }
 
+  handleClickedEvent() {
+    console.log('clicked!');
+    this.setState({clickedEvent: !this.state.clickedEvent});
+  }  
+
   pollEvents() {
     this.props.getEvents(this.props.history, function(result) {
 
@@ -58,7 +63,13 @@ class Homepage extends React.Component {
 
       {/* -------LEFT HAND COLUMN------- */}
       <div className="col-sm-3 account">
-        <Account username={this.props.userName} friends = {this.props.friends} myEvents={this.props.ownerEvents} friendEvents={this.props.friendEvents} />
+        <Account 
+          username={this.props.userName}
+          friends = {this.props.friends} 
+          myEvents={this.props.ownerEvents} 
+          friendEvents={this.props.friendEvents} 
+          handleClickedEvent={this.handleClickedEvent.bind(this)}
+        />
       </div>
 
       {/* -------RIGHT HAND COLUMN------- */}

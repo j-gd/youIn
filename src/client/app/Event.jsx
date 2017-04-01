@@ -9,7 +9,7 @@ import {render} from 'react-dom';
 class Event extends React.Component {
   constructor(props) {
     super(props);
-    this.state={
+    this.state = {
       clickedEvent: false
     }
   }
@@ -21,7 +21,11 @@ class Event extends React.Component {
 
       {/* -------LEFT HAND COLUMN------- */}
       <div className="col-sm-3 account">
-        <Account friends = {this.props.friends} myEvents={this.props.ownerEvents} friendEvents={this.props.ownerEvents} />
+        <Account
+          friends={this.props.friends} 
+          myEvents={this.props.ownerEvents} 
+          friendEvents={this.props.ownerEvents}
+        />
       </div>
 
       {/* -------RIGHT HAND COLUMN------- */}
@@ -34,7 +38,7 @@ class Event extends React.Component {
 
          {/* -------MAIN------- */}
         <div className='col-sm-8 mainview'>
-          {this.state.clickedEvent ? <CreateEvent/> : <EventOverview/>}
+          {this.state.clickedEvent ? <CreateEvent/> : <EventOverview />}
         </div>
 
          {/* -------CHAT------- */}
