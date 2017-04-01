@@ -12,8 +12,8 @@ let port = process.env.PORT || 8080;
 let app = express();
 
 
-// let trace = require('babel-plugin-trace');
-// trace: 'JG using trace with var:', port;
+let trace = require('babel-plugin-trace');
+trace: 'JG using trace with var:', port;
 
 
 app.use(bodyParser.json());

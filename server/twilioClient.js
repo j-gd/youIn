@@ -5,29 +5,37 @@ let twilioAccountSid = process.env.TWILIO_ACCOUNT_SID;
 let twilioAuthToken = process.env.TWILIO_AUTH_TOKEN;
 let twilioNumber = process.env.TWILIO_NUMBER;
 
-let attendees = require('./dummy_data.json');
 let client = require('twilio')(twilioAccountSid, twilioAuthToken); 
  
-module.exports.sendSms = function(event, cb) {
-  // console.log('event', event);
+module.exports.sendSms = function(event, attendees) {
   let eventDateString = event.date.slice(0, 10);
   let fullEventTime = new Date (eventDateString + ' ' + event.time);
 
   hoursLeft = Math.floor((Date.parse(fullEventTime) - Date.now()) / (60 * 60 * 1000));
 
-  attendees.forEach(function(attendee) {
-    client.messages.create({ 
-      to: attendee.phoneNumber, 
-      from: twilioNumber, 
-      body: `Hey ${attendee.name}, ${event.title} is happening in ${hoursLeft} hours! Are youIn?`
-    }, function(err, data) {
-      if (err) {
-        console.error(err);
-        cb(err, null);
-      } else {
-        console.log('SMS sent!');
-        cb(null, data);
-      }
+  return new Promise(function(resolve, reject) {
+    let allData = [];
+
+    attendees.forEach(function(attendee) {
+      trace: attendee;
+      client.messages.create({ 
+        to: attendee.phonenumber, 
+        from: twilioNumber, 
+        body: `Hey ${attendee.firstname}, ${event.title} is happening in ${hoursLeft} hours! Are youIn?`
+
+      }, function(err, data) {
+        if (err) {
+          console.error(err);
+          reject(err);
+        } else {
+          console.log('SMS sent!');
+          allData.push(data);
+
+          if (allData.length === attendees.length) {
+            resolve(allData);
+          }
+        }
+      });
     });
-  });
+  }); 
 };
