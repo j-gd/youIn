@@ -34,8 +34,13 @@ class Homepage extends React.Component {
         currentEvent: this.props.friendEvents[0]
       })
     }
-
   }
+
+  handleClickedEvent() {
+    console.log('clicked!');
+    this.setState({clickedEvent: !this.state.clickedEvent});
+  }  
+
   pollEvents() {
     // this.props.getEvents(this.props.history, function(result) {
 
@@ -85,10 +90,19 @@ class Homepage extends React.Component {
       // { -------PAGE WRAPPER------ }
       <div className="container-fluid main">
 
-        {/* -------LEFT HAND COLUMN------- */}
-        <div className="col-sm-3 account">
-          <Account handleWantsEvent={this.handleWantsEvent} handleUserWantsEvent={this.handleUserWantsEvent} username={this.props.userName} friends = {this.props.friends} myEvents={this.props.ownerEvents} friendEvents={this.props.friendEvents} />
-        </div>
+
+      {/* -------LEFT HAND COLUMN------- */}
+      <div className="col-sm-3 account">
+        <Account 
+          username={this.props.userName}
+          friends = {this.props.friends} 
+          myEvents={this.props.ownerEvents} 
+          friendEvents={this.props.friendEvents} 
+          handleClickedEvent={this.handleClickedEvent.bind(this)}
+          handleUserWantsEvent={this.handleUserWantsEvent} 
+          handleWantsEvent={this.handleWantsEvent}
+        />
+      </div>
 
         {/* -------RIGHT HAND COLUMN------- */}
         <div className="col-sm-9 right9">
