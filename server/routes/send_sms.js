@@ -7,22 +7,22 @@ module.exports = (req, res) => {
   let event = JSON.parse(sringEvent);
   
   // model.getUsersToSms.attendingUsersWithPhone(event.event_id);
-  let test = model.getUsersToSms.attendingUsersWithPhone(2);
+  // let test = model.getUsersToSms.attendingUsersWithPhone(2);
   // console.log(test);
   //~~hard-coded to event_id value of 2, change in prod~~~~~
-  // return model.getUsersToSms.attendingUsersWithPhone(2)
-  // .then( (attendees) => {
+  return model.getUsersToSms.attendingUsersWithPhone(2)
+  .then( (attendees) => {
  
-  //   twilioClient.sendSms(event, attendees)
-  //   .then( (results) => {
-  //     res.status(201).send(results);
-  //   })
-  //   .catch( (error) => {
-  //     console.log(error);
-  //     res.status(404).send('Could not send all SMS');
-  //   }); 
-  // })
-  // .catch( (err) => {
-  //   console.log('err on the send_sms route', err);
-  // });
+    twilioClient.sendSms(event, attendees)
+    .then( (results) => {
+      res.status(201).send(results);
+    })
+    .catch( (error) => {
+      console.log(error);
+      res.status(404).send('Could not send all SMS');
+    }); 
+  })
+  .catch( (err) => {
+    console.log('err on the send_sms route', err);
+  });
 };
