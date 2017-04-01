@@ -87,28 +87,28 @@ class Chat extends React.Component{
     <div className='chatContainer'>
       <form onSubmit={this.handleFormSubmit} className='chatFlexForm'>
 
-      <div className='chatFlexTop'>
-        <div className='flexRowTop'>
-          <h2 className='flexRowItemLeft'> Event Name </h2>
-          <h2 className='flexRowItemMiddle'> Group Chat </h2>
-          <h2 className='flexRowItemRight'> Action Button </h2>
+        <div className='chatFlexTop'>
+          <div className='flexRowTop'>
+            <h2 className='flexRowItemLeft'> Event Name </h2>
+            <h2 className='flexRowItemMiddle'> Group Chat </h2>
+            <h2 className='flexRowItemRight'> Action Button </h2>
+          </div>
         </div>
-      </div>
 
-      <div className='chatFlexMiddle'>
-        <ul className='flexRowMiddle'>
-          {this.state.messages.map(message =>
-            <Message message={message} className='displayChatNames' key={message.created}/>
-          )}
-        </ul>
-      </div>
-
-      <div className='chatFlexBottom'>
-        <div className='flexRowBottom'>
-          <input type='text' className='chatFlex4-5' onChange={this.handleTextChange} value={this.state.message} placeholder='chat with friends' />
-          <input type='submit' className='chatFlex1-5' />
+        <div className='chatFlexMiddle'>
+          <ul className='flexRowMiddle'>
+            {this.state.messages.map(message =>
+              <Message message={message} className='displayChatNames' key={message.created}/>
+            )}
+          </ul>
         </div>
-      </div>
+
+        <div className='chatFlexBottom'>
+          <div className='flexRowBottom'>
+            <input type='text' className='chatFlex4-5' onChange={this.handleTextChange} value={this.state.message} placeholder='chat with friends' />
+            <input type='submit' className='chatFlex1-5' />
+          </div>
+        </div>
 
       </form>
     </div>

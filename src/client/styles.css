@@ -69,6 +69,10 @@ font-weight: 100;
   /*text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;*/
 }
 
+h4{
+  color: black;
+}
+
 p, li {
   color: white;
   font-family: Roboto, sans-serif;
@@ -251,10 +255,11 @@ h3.sendText {
   padding: 0;
   height: 100%;
   width: 100%;
+  color: black;
 }
 
 .col-sm-3.account{
-  background-color: rgba(39, 22, 51, 0.88);
+  background-color: rgb(77, 56, 75);
   height: 100%;
   padding: 0;
 }
@@ -315,4 +320,23 @@ h3.sendText {
   color: cornflowerblue;
   /*font-size: 1.65em;*/
   transition: 0.2s ease;
+}
+
+.caret-down {
+  font-size: 0.5em;
+  padding-left: 2em;
+}
+
+.topBar h2 {
+  color: black;
+  display: inline;
+}
+
+.flexRowTop h2 {
+  color: black;
+}
+
+.progress {
+  width: 20%;
+  float: right;
 }
