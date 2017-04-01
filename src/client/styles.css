@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans:100,300');
 
 .page-header {
   background: url(./media_lib/youInLogo.png) 50% 50% no-repeat;
@@ -55,14 +56,16 @@ h1 {
   text-align: center;
   color: white;
   font-family: Roboto, sans-serif;
-  text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
+  /*text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;*/
 }
 
 h2, h4 {
-  vertical-align: text-bottom;
-  text-align: center;
+  /*vertical-align: text-bottom;*/
+  /*text-align: center;*/
   color: white;
-  font-family: Roboto, sans-serif;
+  /*font-family: Roboto, sans-serif;*/
+  font-family: 'Josefin Sans', sans-serif;
+font-weight: 100;
   text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
 }
 
@@ -248,22 +251,55 @@ h3.sendText {
   padding: 0;
   height: 100%;
   width: 100%;
-  background-color: blue;
 }
 
-.col-sm-3.directory{
-  background-color: red;
+.col-sm-3.account{
+  background-color: rgba(39, 22, 51, 0.88);
   height: 100%;
-
+  padding: 0;
 }
 
 .col-sm-12.topbar {
-  background-color: purple;
+  background-color: antiquewhite;
   padding: 1em;
   margin: 0 auto;
   width: 100%;
+  border-bottom: 2px double black;
+
 }
 
 .col-sm-9.right9 {
   padding: 0;
+}
+
+.col-sm-8.mainview {
+  background-color: antiquewhite;
+  height: 100%;
+}
+
+.col-sm-4.right4 {
+  background-color: antiquewhite;
+  height: 100%;
+  border-left: 2px double black;
+}
+
+.col-sm-12.accountMyEvents {
+    padding: 2em;
+}
+.col-sm-12.accountFriendEvents {
+    padding: 2em;
+}
+.col-sm-12.accountTopBar {
+    padding: 2em;
+}
+.row-sm-3.accountPhoto img {
+  height: 4em;
+  border-radius: 10%;
+  float: left;
+  padding-right: 0.5em;
+}
+.row-sm-9.accountName h2 {
+  display: inline;
+  font-size: 2em;
+
 }
