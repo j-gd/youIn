@@ -13,7 +13,7 @@ class TopBar extends React.Component{
         <span>#eventName</span>
         <div className="progress">
           <span className="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100">
-            <span class="sr-only">60% Complete</span>
+            <span className="sr-only">60% Complete</span>
           </span>
         </div>
       </div>
