@@ -27,6 +27,7 @@ class Facebook extends React.Component {
     FB.api('/me', function(response) {
       check.props.setName(response.name);
       console.log('Successful login for: ' + response.name);
+      // check.props.handleLogin();
     });
   }
 
@@ -51,8 +52,10 @@ class Facebook extends React.Component {
         console.log('results of fetching events', result);
         this.setState({
           ownerEvents: result.ownerEvents,
-          friendEvents: result.friendEvents
+          friendEvents: result.friendEvents,
+          successfulLogin: true
         });
+
       });
       this.props.history.push('/homepage');
 
