@@ -35,7 +35,6 @@ class Chat extends React.Component{
     let context = this;
     let author = this.props.owner;
     console.log('author', author);
-
     console.log('inside form event');
     // var socket = io();
     // var message = {
@@ -50,10 +49,6 @@ class Chat extends React.Component{
     // //route and message to send to server
     // socket.emit('chat', message);
 
-
-
-
-
     this.setState({
       message: ''
     })
@@ -66,15 +61,6 @@ class Chat extends React.Component{
     })
   }
 
-      // <div className='displayChatMessages'>
-      // {this.state.messages.length > 0 &&
-
-      //   this.state.messages.map( (msg) => {
-      //     // <li key={msg}>{msg}</li>
-      //     <h2>hi</h2>
-      //   })
-      // }
-      // </div>
   render(){
 
     return(
@@ -112,33 +98,3 @@ class Chat extends React.Component{
 
 
 export default Chat;
-        // <div className='flexRowMiddle'>
-
-        //   <input type='textarea' className='displayChatNames'/>
-        //   <input type='textarea' className='displayChatMessages'/>
-
-        // </div>
-        // <div className='flexRowMiddle'>
-
-        //   <input type='textarea' className='displayChatNames'/>
-        //   <input type='textarea' className='displayChatMessages'/>
-
-        // </div>
-        // <div className='flexRowMiddle'>
-
-        //   <input type='textarea' className='displayChatNames'/>
-        //   <input type='textarea' className='displayChatMessages'/>
-
-        // </div>
-        // <div className='flexRowMiddle'>
-
-        //   <input type='textarea' className='displayChatNames'/>
-        //   <input type='textarea' className='displayChatMessages'/>
-
-        // </div>
-        // <div className='flexRowMiddle'>
-
-        //   <input type='textarea' className='displayChatNames'/>
-        //   <input type='textarea' className='displayChatMessages'/>
-
-        // </div>Z

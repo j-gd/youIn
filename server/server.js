@@ -10,8 +10,8 @@ let handler = require('./routes/request_handler');
 
 let port = process.env.PORT || 8080;
 let app = express();
-var server = require('http').Server(app);
-let io = require('socket.io')(server);
+// var server = require('http').Server(app);
+// let io = require('socket.io')(server);
 
 // let trace = require('babel-plugin-trace');
 // trace: 'JG using trace with var:', port;
