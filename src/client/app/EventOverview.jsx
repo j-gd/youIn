@@ -18,11 +18,13 @@ class EventOverview extends React.PureComponent {
     return(
       <div className='EventOverviewWrapper'>
         <div className='eventDetails'>
-          <h4>Date: {event.title}</h4>
-          <h4>Location: {event.description}</h4>
-          <h4>Location: {event.short_desc}</h4>
 
-          <p onClick={this.updateEventDetails}>Update</p>
+          <h4>Title: {event.title}</h4>
+          <h4>Location: {event.location}</h4><span><a href='#'>map</a></span>
+          <h4>Date: {event.date}</h4>
+          <h4>Type: {event.short_desc}</h4>
+          <h4>description: {event.description}</h4>
+          <a href='#' onClick={this.updateEventDetails}>Update</a>
         </div>
 
         <div className='whosIn'>
