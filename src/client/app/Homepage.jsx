@@ -99,8 +99,11 @@ class Homepage extends React.Component {
           myEvents={this.props.ownerEvents} 
           friendEvents={this.props.friendEvents} 
           handleClickedEvent={this.handleClickedEvent.bind(this)}
+
           handleUserWantsEvent={this.handleUserWantsEvent} 
           handleWantsEvent={this.handleWantsEvent}
+
+          clickedEvent={this.state.clickedEvent}
         />
       </div>
 

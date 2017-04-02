@@ -11,7 +11,7 @@ class Account extends React.Component {
       photo: false,
     }
   }
-  render(){
+  render() {
     return(
     <div>
       <div className='col-sm-12 accountTopBar'>
@@ -23,7 +23,11 @@ class Account extends React.Component {
         </div>
       </div>
       <div className='col-sm-12 accountMyEvents'>
-        <h2>My Events<button className='glyphicon glyphicon-plus-sign' onClick={this.props.handleClickedEvent}></button></h2>
+        <h2>My Events
+          {!this.props.clickedEvent ?
+            <button className='glyphicon glyphicon-plus-sign' onClick={this.props.handleClickedEvent}></button>
+          : null}
+        </h2>
         <MyEvents events={this.props.myEvents}/>
 
       </div>
