@@ -37,7 +37,6 @@ class Homepage extends React.Component {
   }
 
   handleClickedEvent() {
-    console.log('clicked!');
     this.setState({clickedEvent: !this.state.clickedEvent});
   }  
 
@@ -85,7 +84,8 @@ class Homepage extends React.Component {
   }
 
   render() {
-    if(this.props.ownerEvents.length > 0 || this.props.myEvents.length > 0){
+    if ((this.props.ownerEvents.length > 0 || this.props.myEvents.length > 0)
+        && !this.state.clickedEvent) {
       return (
       // { -------PAGE WRAPPER------ }
       <div className="container-fluid main">
@@ -94,16 +94,14 @@ class Homepage extends React.Component {
       {/* -------LEFT HAND COLUMN------- */}
       <div className="col-sm-3 account">
         <Account 
-          username={this.props.userName}
-          friends = {this.props.friends} 
-          myEvents={this.props.ownerEvents} 
-          friendEvents={this.props.friendEvents} 
-          handleClickedEvent={this.handleClickedEvent.bind(this)}
-
-          handleUserWantsEvent={this.handleUserWantsEvent} 
-          handleWantsEvent={this.handleWantsEvent}
-
-          clickedEvent={this.state.clickedEvent}
+              handleWantsEvent={this.handleWantsEvent} 
+              handleUserWantsEvent={this.handleUserWantsEvent} 
+              username={this.props.userName} 
+              friends = {this.props.friends} 
+              myEvents={this.props.ownerEvents}
+              friendEvents={this.props.friendEvents}
+              clickedEvent={this.state.clickedEvent}
+              handleClickedEvent={this.handleClickedEvent.bind(this)}
         />
       </div>
 
@@ -136,7 +134,16 @@ class Homepage extends React.Component {
 
           {/* -------LEFT HAND COLUMN------- */}
           <div className="col-sm-3 account">
-            <Account handleWantsEvent={this.handleWantsEvent} handleUserWantsEvent={this.handleUserWantsEvent} username={this.props.userName} friends = {this.props.friends} myEvents={this.props.ownerEvents} friendEvents={this.props.friendEvents} />
+            <Account 
+              handleWantsEvent={this.handleWantsEvent} 
+              handleUserWantsEvent={this.handleUserWantsEvent} 
+              username={this.props.userName} 
+              friends = {this.props.friends} 
+              myEvents={this.props.ownerEvents}
+              friendEvents={this.props.friendEvents}
+              clickedEvent={this.state.clickedEvent}
+              handleClickedEvent={this.handleClickedEvent.bind(this)}
+            />
           </div>
 
           {/* -------RIGHT HAND COLUMN------- */}
@@ -144,7 +151,7 @@ class Homepage extends React.Component {
 
              {/* -------TOPBAR------- */}
             <div className='col-sm-12 topbar'>
-              <TopBar owner={this.props.friends[0]}/>
+              <TopBar event={null} owner={this.props.friends[0]}/>
             </div>
 
              {/* -------MAIN------- */}
