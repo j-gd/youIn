@@ -332,7 +332,7 @@ h3.sendText {
   display: inline;
 }
 
-.flexRowTop h2 {
+.friendsNameList li, .flexRowTop h2 {
   color: black;
 }
 
