@@ -38,7 +38,15 @@ class Event extends React.Component {
 
          {/* -------MAIN------- */}
         <div className='col-sm-8 mainview'>
-          {this.state.clickedEvent ? <CreateEvent/> : <EventOverview />}
+          {this.state.clickedEvent ? 
+            <CreateEvent 
+              history={this.props.history}
+              friends={this.props.friends}
+              getEvents={this.props.getEvents} 
+            /> : 
+            <EventOverview 
+            />
+          }
         </div>
 
          {/* -------CHAT------- */}

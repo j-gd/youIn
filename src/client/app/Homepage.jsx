@@ -1,7 +1,6 @@
 import React from 'react';
 import OwnerEventList from './OwnerEventList.jsx';
 import FriendEventList from './FriendEventList.jsx';
-import CreateEventButton from './CreateEventButton.jsx';
 import LogoutButton from './LogoutButton.jsx';
 import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
 
@@ -157,7 +156,11 @@ class Homepage extends React.Component {
 
              {/* -------MAIN------- */}
             <div className='col-sm-12 mainview'>
-               <CreateEvent/>
+               <CreateEvent
+                history={this.props.history}
+                friends={this.props.friends}
+                getEvents={this.props.getEvents}
+               />
             </div>
 
              {/* -------CHAT------- */}
