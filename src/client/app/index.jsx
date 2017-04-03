@@ -2,7 +2,7 @@ import React from 'react';
 import {render} from 'react-dom';
 import OwnerEventList from './OwnerEventList.jsx';
 import FriendEventList from './FriendEventList.jsx';
-import CreateEventButton from './CreateEventButton.jsx';
+import CreateEvent from './CreateEvent.jsx';
 import Homepage from './Homepage.jsx';
 import {users as friends} from '../../../server/data.js';
 import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
@@ -64,7 +64,7 @@ class App extends React.Component {
         context.setState({friends: data});
       },
       error: function(err) {
-        console.log('error in ajax get request in CreateEventButton', err);
+        console.log('error in ajax get request in CreateEvent', err);
       }
     })
   }

@@ -1,7 +1,6 @@
 import React from 'react';
 import {render} from 'react-dom';
 import FriendsListItem from './FriendsListItem.jsx';
-import Modal from 'boron/DropModal';
 import $ from 'jquery';
 
 class CreateEvent extends React.Component {
@@ -84,8 +83,8 @@ class CreateEvent extends React.Component {
       data: JSON.stringify(users_eventsData),
       contentType: 'application/json',
       success: function(data) {
-        console.log('success from addToUsers_Events in CreateEventButton :', data);
-        this.hideModal();
+        console.log('success from addToUsers_Events in CreateEvent :', data);
+
         this.props.getEvents(this.props.history, function(result) {
           this.setState({
             ownerEvents: result.ownerEvents,
@@ -94,7 +93,7 @@ class CreateEvent extends React.Component {
         });
       }.bind(this),
       error: function(err) {
-        console.log('error from addToUsers_Events  in CreateEventButton', err);
+        console.log('error from addToUsers_Events  in CreateEvent', err);
         this.props.history.push('/');
       }.bind(this)
     });
@@ -119,11 +118,11 @@ class CreateEvent extends React.Component {
       data: JSON.stringify(eventData),
       contentType: 'application/json',
       success: function(data) {
-        console.log('data from ajax in CreateEventButton', data.event_id);
+        console.log('data from ajax in CreateEvent', data.event_id);
         context.addToUsers_Events(data.event_id);
       },
       error: function(err) {
-        console.log('error in ajax request in CreateEventButton', err);
+        console.log('error in ajax request in CreateEvent', err);
         this.props.history.push('/');
       }
     });
@@ -246,19 +245,3 @@ class CreateEvent extends React.Component {
 }
 
 export default CreateEvent;
-// render(){
-//   return(
-//     <div className="col-md-4">
-//       <h4 className='create'>Invite Friends</h4>
-//       {
-//         this.props.friends.map( (friend, i) => (
-//           <FriendsListItem
-//             key={i}
-//             friend={friend}
-//             inviteFriend={this.inviteFriend(friend)}
-//             />
-//           )
-//         )
-//       }
-//     </div>
-//    )
