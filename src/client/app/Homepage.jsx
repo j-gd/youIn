@@ -20,6 +20,7 @@ class Homepage extends React.Component {
       clickedEvent: false,
       createEvent: false,
       currentEvent: [],
+
     };
     this.handleWantsCreateEvent = this.handleWantsCreateEvent.bind(this);
     this.handleWantsEvent = this.handleWantsEvent.bind(this);
@@ -41,19 +42,19 @@ class Homepage extends React.Component {
   }  
 
   pollEvents() {
-    // this.props.getEvents(this.props.history, function(result) {
+    this.props.getEvents(this.props.history, function(result) {
 
-    //   if (result.ownerEvents.length !== this.state.ownerEvents.length) {
-    //     this.setState({
-    //       ownerEvents: result.ownerEvents
-    //     });
-    //   }
-    //   if (result.friendEvents.length !== this.state.friendEvents.length) {
-    //     this.setState({
-    //       friendEvents: result.friendEvents
-    //     });
-    //   }
-    // });
+      if (result.ownerEvents.length !== this.state.ownerEvents.length) {
+        this.setState({
+          ownerEvents: result.ownerEvents
+        });
+      }
+      if (result.friendEvents.length !== this.state.friendEvents.length) {
+        this.setState({
+          friendEvents: result.friendEvents
+        });
+      }
+    });
   }
 
   handleWantsCreateEvent(event){
