@@ -21,6 +21,7 @@ class CreateEvent extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.inviteFriend = this.inviteFriend.bind(this);
     this.addToUsers_Events = this.addToUsers_Events.bind(this);
+    this.handleClickedInvite = this.handleClickedInvite.bind(this);
   }
 
   componentDidMount() {
@@ -31,6 +32,14 @@ class CreateEvent extends React.Component {
     let newState = {};
     newState[name] = event.target.value;
     this.setState(newState);
+  }
+
+  handleClickedInvite(){
+    console.log('inside handleClickedInvite')
+      FB.ui({
+      method: 'send',
+      link: 'https://you--in-staging.herokuapp.com/',
+    });
   }
 
   inviteFriend(friend) {

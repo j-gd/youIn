@@ -118,15 +118,17 @@ class Homepage extends React.Component {
             <TopBar event={this.state.currentEvent} owner={this.props.friends[0]}/>
           </div>
 
-           {/* -------MAIN------- */}
-          <div className='col-sm-8 mainview'>
-            <EventOverview event={this.state.currentEvent} event={this.props.ownerEvents}/>
+          <div className='mainviewWrapper'>
+             {/* -------MAIN------- */}
+            <div className='col-sm-8 mainview'>
+              <EventOverview event={this.state.currentEvent}/>
 
-          </div>
+            </div>
 
-           {/* -------CHAT------- */}
-          <div className='col-sm-4 right4'>
-            <Chat owner={this.props.friends[0]}/>
+             {/* -------CHAT------- */}
+            <div className='col-sm-4 right4'>
+              <Chat event={this.state.currentEvent} owner={this.props.friends[0]}/>
+            </div>
           </div>
 
         </div>

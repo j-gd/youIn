@@ -1,4 +1,5 @@
 import React from 'react';
+var socket = require('socket.io-client');
 
 class Chat extends React.Component{
   constructor(props){
@@ -10,9 +11,14 @@ class Chat extends React.Component{
     //bind functions
     this.handleFormSubmit = this.handleFormSubmit.bind(this);
     this.handleTextChange = this.handleTextChange.bind(this);
+    this.createSocketConnection = this.createSocketConnection.bind(this);
   }
 
   componentDidMount(){
+    this.createSocketConnection()
+  }
+
+  createSocketConnection(){
     // var socket = io();
     // var context = this;
     // //listening for 'chat message', setting state
@@ -26,6 +32,7 @@ class Chat extends React.Component{
     //     messages: messages
     //   })
     // });
+
   }
 
   handleFormSubmit(event){
@@ -69,9 +76,7 @@ class Chat extends React.Component{
 
       <div className='chatFlexTop'>
         <div className='flexRowTop'>
-          <h2 className='flexRowItemLeft'> Event Name </h2>
-          <h2 className='flexRowItemMiddle'> Group Chat </h2>
-          <h2 className='flexRowItemRight'> Action Button </h2>
+          <h2 className='flexRowItemLeft'> {this.props.event.title} </h2>
         </div>
       </div>
 
