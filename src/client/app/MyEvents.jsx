@@ -13,7 +13,7 @@ render(){
   return(
     <div>
       {this.props.events.map( event =>
-        <EventListItem handleWantsEvent={this.props.handleWantsEvent} key={event.date} event={event}/>
+        <EventListItem handleWantsEvent={this.props.handleWantsEvent} key={event.event_id} event={event}/>
       )}
     </div>
     )
