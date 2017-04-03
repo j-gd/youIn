@@ -22,6 +22,7 @@ class Homepage extends React.Component {
 
     };
     this.handleWantsCreateEvent = this.handleWantsCreateEvent.bind(this);
+    // this.
     this.handleWantsEvent = this.handleWantsEvent.bind(this);
   }
   componentWillMount(){
@@ -36,9 +37,9 @@ class Homepage extends React.Component {
     }
   }
 
-  handleClickedEvent() {
-    this.setState({clickedEvent: !this.state.clickedEvent});
-  }
+  // handleClickedEvent() {
+  //   this.setState({clickedEvent: !this.state.clickedEvent});
+  // }
 
   pollEvents() {
     this.props.getEvents(this.props.history, function(result) {
@@ -57,18 +58,23 @@ class Homepage extends React.Component {
   }
 
   handleWantsCreateEvent(event){
-    // this.state({
-    //   createEvent: !this.state.createEvent
-    // })
+    console.log('insdie handle handleWantsCreateEvent')
+    this.setState({
+      createEvent: true,
+      clickedEvent: false
+    })
   }
 
   handleWantsEvent(event){
     console.log('inside handle wants event');
     //change event from one to another
-    this.setState({
-      currentEvent: event
-    })
-  }
+      this.setState({
+        currentEvent: event,
+        clickedEvent: true,
+        createEvent: false
+      })
+    }
+
 
   componentDidMount() {
     // this.setState({
@@ -84,8 +90,7 @@ class Homepage extends React.Component {
   }
 
   render() {
-    if ((this.props.ownerEvents.length > 0 || this.props.myEvents.length > 0)
-        && !this.state.clickedEvent) {
+    if (!this.state.createEvent) {
       return (
       // { -------PAGE WRAPPER------ }
       <div className="container-fluid main">
@@ -95,12 +100,13 @@ class Homepage extends React.Component {
       <div className="col-sm-3 account">
         <Account
               handleWantsEvent={this.handleWantsEvent}
+              handleWantsCreateEvent={this.handleWantsCreateEvent}
               username={this.props.userName}
               friends = {this.props.friends}
               myEvents={this.props.ownerEvents}
               friendEvents={this.props.friendEvents}
               clickedEvent={this.state.clickedEvent}
-              handleClickedEvent={this.handleClickedEvent.bind(this)}
+              handleClickedEvent={this.handleClickedEvent}
         />
       </div>
 
@@ -140,7 +146,7 @@ class Homepage extends React.Component {
               myEvents={this.props.ownerEvents}
               friendEvents={this.props.friendEvents}
               clickedEvent={this.state.clickedEvent}
-              handleClickedEvent={this.handleClickedEvent.bind(this)}
+              handleClickedEvent={this.handleClickedEvent}
             />
           </div>
 
