@@ -57,7 +57,7 @@ class Homepage extends React.Component {
     });
   }
 
-  handleWantsCreateEvent(event){
+  handleWantsCreateEvent(event) {
     console.log('insdie handle handleWantsCreateEvent')
     this.setState({
       createEvent: true,
@@ -65,7 +65,7 @@ class Homepage extends React.Component {
     })
   }
 
-  handleWantsEvent(event){
+  handleWantsEvent(event) {
     console.log('inside handle wants event');
     //change event from one to another
       this.setState({
@@ -74,7 +74,6 @@ class Homepage extends React.Component {
         createEvent: false
       })
     }
-
 
   componentDidMount() {
     // this.setState({
