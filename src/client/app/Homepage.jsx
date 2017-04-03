@@ -22,9 +22,9 @@ class Homepage extends React.Component {
 
     };
     this.handleWantsCreateEvent = this.handleWantsCreateEvent.bind(this);
-    // this.
     this.handleWantsEvent = this.handleWantsEvent.bind(this);
   }
+
   componentWillMount(){
     if(this.props.ownerEvents.length > 0){
       this.setState({
@@ -160,7 +160,11 @@ class Homepage extends React.Component {
 
              {/* -------MAIN------- */}
             <div className='col-sm-12 mainview'>
-               <CreateEvent friends = {this.props.friends} getEvents={this.props.getEvents}/>
+               <CreateEvent
+                 history={this.props.history}
+                 friends = {this.props.friends}
+                 getEvents={this.props.getEvents}
+                 />
             </div>
 
           </div>
