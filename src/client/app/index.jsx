@@ -70,6 +70,8 @@ class App extends React.Component {
   }
 
   getEvents(history, callback) {
+    console.log('historyGETEVENTS', history)
+    console.log('callbackGETEVENTS', callback)
     $.ajax({
       url: '/events',
       method: 'GET',
