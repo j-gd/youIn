@@ -340,3 +340,14 @@ h3.sendText {
   width: 20%;
   float: right;
 }
+
+.glyphicon-plus-sign {
+  font-size: 0.8em;
+  border: hidden;
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.glyphicon-plus-sign:hover {
+  color: cornflowerblue;
+}
+

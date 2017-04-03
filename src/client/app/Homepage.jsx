@@ -24,6 +24,7 @@ class Homepage extends React.Component {
     this.handleWantsCreateEvent = this.handleWantsCreateEvent.bind(this);
     this.handleWantsEvent = this.handleWantsEvent.bind(this);
   }
+
   componentWillMount(){
     if(this.props.ownerEvents.length > 0){
       this.setState({
@@ -36,9 +37,9 @@ class Homepage extends React.Component {
     }
   }
 
-  handleClickedEvent() {
-    this.setState({clickedEvent: !this.state.clickedEvent});
-  }  
+  // handleClickedEvent() {
+  //   this.setState({clickedEvent: !this.state.clickedEvent});
+  // }
 
   pollEvents() {
     this.props.getEvents(this.props.history, function(result) {
@@ -57,18 +58,23 @@ class Homepage extends React.Component {
   }
 
   handleWantsCreateEvent(event){
-    // this.state({
-    //   createEvent: !this.state.createEvent
-    // })
+    console.log('insdie handle handleWantsCreateEvent')
+    this.setState({
+      createEvent: true,
+      clickedEvent: false
+    })
   }
 
   handleWantsEvent(event){
-    // console.log('inside handle wants event');
-    // //change event from one to another
-    // this.setState({
-    //   currentEvent: event
-    // })
-  }
+    console.log('inside handle wants event');
+    //change event from one to another
+      this.setState({
+        currentEvent: event,
+        clickedEvent: true,
+        createEvent: false
+      })
+    }
+
 
   componentDidMount() {
     // this.setState({
@@ -84,8 +90,7 @@ class Homepage extends React.Component {
   }
 
   render() {
-    if ((this.props.ownerEvents.length > 0 || this.props.myEvents.length > 0)
-        && !this.state.clickedEvent) {
+    if (!this.state.createEvent) {
       return (
       // { -------PAGE WRAPPER------ }
       <div className="container-fluid main">
@@ -93,15 +98,15 @@ class Homepage extends React.Component {
 
       {/* -------LEFT HAND COLUMN------- */}
       <div className="col-sm-3 account">
-        <Account 
-              handleWantsEvent={this.handleWantsEvent} 
-              handleUserWantsEvent={this.handleUserWantsEvent} 
-              username={this.props.userName} 
-              friends = {this.props.friends} 
+        <Account
+              handleWantsEvent={this.handleWantsEvent}
+              handleWantsCreateEvent={this.handleWantsCreateEvent}
+              username={this.props.userName}
+              friends = {this.props.friends}
               myEvents={this.props.ownerEvents}
               friendEvents={this.props.friendEvents}
               clickedEvent={this.state.clickedEvent}
-              handleClickedEvent={this.handleClickedEvent.bind(this)}
+              handleClickedEvent={this.handleClickedEvent}
         />
       </div>
 
@@ -134,15 +139,14 @@ class Homepage extends React.Component {
 
           {/* -------LEFT HAND COLUMN------- */}
           <div className="col-sm-3 account">
-            <Account 
-              handleWantsEvent={this.handleWantsEvent} 
-              handleUserWantsEvent={this.handleUserWantsEvent} 
-              username={this.props.userName} 
-              friends = {this.props.friends} 
+            <Account
+              handleWantsEvent={this.handleWantsEvent}
+              username={this.props.userName}
+              friends = {this.props.friends}
               myEvents={this.props.ownerEvents}
               friendEvents={this.props.friendEvents}
               clickedEvent={this.state.clickedEvent}
-              handleClickedEvent={this.handleClickedEvent.bind(this)}
+              handleClickedEvent={this.handleClickedEvent}
             />
           </div>
 
@@ -157,15 +161,10 @@ class Homepage extends React.Component {
              {/* -------MAIN------- */}
             <div className='col-sm-12 mainview'>
                <CreateEvent
-                history={this.props.history}
-                friends={this.props.friends}
-                getEvents={this.props.getEvents}
-               />
-            </div>
-
-             {/* -------CHAT------- */}
-            <div className='col-sm-4 right4'>
-              <Chat owner={this.props.friends[0]}/>
+                 history={this.props.history}
+                 friends = {this.props.friends}
+                 getEvents={this.props.getEvents}
+                 />
             </div>
 
           </div>

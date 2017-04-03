@@ -24,16 +24,14 @@ class Account extends React.Component {
       </div>
       <div className='col-sm-12 accountMyEvents'>
         <h2>My Events
-          {!this.props.clickedEvent ?
-            <button className='glyphicon glyphicon-plus-sign' onClick={this.props.handleClickedEvent}></button>
-          : null}
+          <button className='glyphicon glyphicon-plus-sign' onClick={this.props.handleWantsCreateEvent}></button>
         </h2>
-        <MyEvents events={this.props.myEvents}/>
+        <MyEvents handleWantsEvent={this.props.handleWantsEvent} events={this.props.myEvents}/>
 
       </div>
       <div className='col-sm-12 accountFriendEvents'>
         <h2>Friend's Events</h2>
-        <MyEvents events={this.props.friendEvents}/>
+        <MyEvents handleWantsEvent={this.props.handleWantsEvent} events={this.props.friendEvents}/>
       </div>
     </div>
     )

@@ -84,7 +84,6 @@ class CreateEvent extends React.Component {
       contentType: 'application/json',
       success: function(data) {
         console.log('success from addToUsers_Events in CreateEvent :', data);
-
         this.props.getEvents(this.props.history, function(result) {
           this.setState({
             ownerEvents: result.ownerEvents,
@@ -168,7 +167,7 @@ class CreateEvent extends React.Component {
 
               <h4>Date & Time</h4>
               <div className='input-group date' id='datetimepicker1'>
-                  <input className="form-control" aria-describedby="basic-addon1" 
+                  <input className="form-control" aria-describedby="basic-addon1"
                     value={this.state.date}
                     onChange={this.handleChange.bind(this, 'date')}
                     type="date" required
@@ -199,7 +198,7 @@ class CreateEvent extends React.Component {
               </div>
 
               <div className="col-sm-12" className="facebook-button">
-                <button className="btn-primary" 
+                <button className="btn-primary"
                         onClick={this.handleClickedInvite}>
                         Invite friends from Facebook (optional)
                 </button>
@@ -211,7 +210,7 @@ class CreateEvent extends React.Component {
               <div className="col-sm-12" >
                 {
                   this.props.friends.map( (friend, i) => (
-                    <FriendsListItem 
+                    <FriendsListItem
                       className="friendsNameList"
                       key={i}
                       friend={friend}
